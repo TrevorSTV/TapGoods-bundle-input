@@ -46,4 +46,10 @@ for bundle in bundles:
     tg.bundle_form_fill(driver, current_bundle, bundle)
     tg.bundle_items_add(driver, current_bundle)
     tg.bundle_tags_add(driver, current_bundle)
+    
+    # click submit button to submit the bundle
+    bundle_submit = driver.find_element_by_css_selector(
+        '#root > div > main > div > div > div > form > div > div > input')
+    bundle_submit.click()
+    
     driver.back()
