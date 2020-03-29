@@ -16,8 +16,8 @@ goes into each bundle. I did it this way because I happened to have both of thos
 spreadsheets, so I didn't need to reformat anything. The program combines the data
 into a dictionary.
 
-After the data is consolidated, the program launches a browser and navigates to TapGoods,
-logs in, and then chooses a location. From there it navigates to the add bundle page.
+After the data is consolidated, the program uses Selenium to launch a browser and navigate to TapGoods,
+log in, and then choose a location. From there it navigates to the add bundle page.
 It then loops through the dictionary of the bundle data filling out the information for
 the bundle, and submitting it. After submition, the back button on the browser is pressed.
 This will return you to the bundle add page with nothing filled in.
@@ -26,6 +26,10 @@ I think a better way than pushing the back button is to use driver.get('url for 
 either at the beginning of the loop, or at the beginning of the bundle_form_fill function.
 However, I didn't think of that until after I no longer had access to TapGoods to get the url.
 
+bundle_input_script.py is the file that contains the script that performs everything. It
+essentially just launches the Selenium webdriver and calls functions in TapGoods_functions.py.
+
+TapGoods_functions.py contains the bulk of the code that actually does anything.
 
 Some notes:
 1. My original script required a lot of babysitting. Basically, since it requires
